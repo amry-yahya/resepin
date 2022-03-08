@@ -20,7 +20,7 @@ class CreateResepsTable extends Migration
             $table->bigInteger('id_user');
             $table->integer('cooking_time');
             $table->string('tag'); 
-            $table->string('image'); 
+            $table->string('image')->nullable();
             $table->string('description'); 
             $table->float('rating');
             $table->string('ingredients');

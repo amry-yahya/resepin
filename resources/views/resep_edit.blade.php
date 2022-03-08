@@ -28,7 +28,7 @@
                 <div class="text-danger">
                     {{ $errors->first('cooking_time') }}
                 </div>
-            @endif
+            @endif 
         </div>
         <div class="form-group">
             <input type="number" name="id_user" class="form-control" placeholder="id user" value="{{ $resep->id_user }}">
@@ -46,14 +46,14 @@
                 </div>
             @endif
         </div>
-        <div class="form-group">
+        {{-- <div class="form-group">
             <input type="text" name="image" class="form-control" placeholder="image" value="{{ $resep->image }}">
             @if ($errors->has('image'))
                 <div class="text-danger">
                     {{ $errors->first('image') }}
                 </div>
             @endif
-        </div>
+        </div> --}}
         <div class="form-group">
             <input type="text" name="description" class="form-control" placeholder="description" value="{{ $resep->description }}">
             @if ($errors->has('description'))

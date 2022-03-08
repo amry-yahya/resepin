@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ResepController;
+use App\Http\Controllers\UploadController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,3 +26,5 @@ Route::get('/resep/view/{id}', [ResepController::class, 'view']);
 Route::get('/resep/edit/{id}', [ResepController::class, 'edit']);
 Route::put('/resep/update/{id}', [ResepController::class, 'update']);
 Route::get('/resep/hapus/{id}', [ResepController::class, 'delete']);
+Route::get('/upload/{id}', [UploadController::class, 'upload']);
+Route::post('/upload/proses', [UploadController::class, 'proses_upload']);

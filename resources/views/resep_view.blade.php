@@ -14,14 +14,14 @@
     <p>{{ $resep->id_user }}</p>
     <p>{{ $resep->cooking_time }}</p>
     <p>{{ $resep->tag }}</p>
-    <p>{{ $resep->image }}</p>
     <p>{{ $resep->description }}</p>
     <p>{{ $resep->rating }}</p>
+    <img src="{{ URL::to('/') }}/gambar/{{ $resep->image }}" alt="gambar tidak ada">
     <p>{{ $resep->ingredients }}</p>
     <p>{{ $resep->steps }}</p>
     <a href="/resep/edit/{{ $resep->id }}">Edit</a>
     <a href="/resep/hapus/{{ $resep->id }}">Hapus</a>
-
+    
 </body>
 
 </html>

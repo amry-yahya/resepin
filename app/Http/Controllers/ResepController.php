@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Resep;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 
 class ResepController extends Controller
@@ -26,7 +27,6 @@ class ResepController extends Controller
             'id_user' => 'required',
             'cooking_time' => 'required',
             'tag' => 'required',
-            'image' => 'required',
             'description' => 'required',
             'rating' => 'required',
             'ingredients' => 'required',
@@ -38,14 +38,13 @@ class ResepController extends Controller
             'id_user' => $request->id_user,
             'cooking_time' => $request->cooking_time,
             'tag' => $request->tag,
-            'image' => $request->image,
             'description' => $request->description,
             'rating' => $request->rating,
             'ingredients' => $request->ingredients,
             'steps' => $request->steps,
         ]);
-
-        return redirect('/resep');
+        $tmp = DB::table('reseps')->latest('id')->first();
+        return redirect('upload/'.$tmp->id);
     }
 
     public function update($id, Request $request)
@@ -55,7 +54,6 @@ class ResepController extends Controller
             'id_user' => 'required',
             'cooking_time' => 'required',
             'tag' => 'required',
-            'image' => 'required',
             'description' => 'required',
             'rating' => 'required',
             'ingredients' => 'required',
@@ -67,7 +65,6 @@ class ResepController extends Controller
         $resep->cooking_time = $request->cooking_time;
         $resep->id_user = $request->id_user;
         $resep->tag = $request->tag;
-        $resep->image = $request->image;
         $resep->description = $request->description;
         $resep->rating = $request->rating;
         $resep->ingredients = $request->ingredients;
