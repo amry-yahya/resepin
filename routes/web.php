@@ -18,5 +18,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::get('/resep','ResepController@index');
 Route::get('/resep', [ResepController::class, 'index']);
+Route::get('/resep/tambah', [ResepController::class, 'tambah']);
+Route::post('/resep/store', [ResepController::class, 'store']);
