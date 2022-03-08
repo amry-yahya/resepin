@@ -21,7 +21,7 @@ Route::get('/', function () {
 Route::get('/resep', [ResepController::class, 'index']);
 Route::get('/resep/tambah', [ResepController::class, 'tambah']);
 Route::post('/resep/store', [ResepController::class, 'store']);
+Route::get('/resep/view/{id}', [ResepController::class, 'view']);
 Route::get('/resep/edit/{id}', [ResepController::class, 'edit']);
 Route::put('/resep/update/{id}', [ResepController::class, 'update']);
-// Route::put('/resep/update/{id}', 'PegawaiController@update');
-// Route::get('/pegawai/edit/{id}', 'PegawaiController@edit');
+Route::get('/resep/hapus/{id}', [ResepController::class, 'delete']);

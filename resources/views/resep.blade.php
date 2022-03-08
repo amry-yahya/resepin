@@ -9,18 +9,13 @@
 </head>
 
 <body>
-            @foreach ($resep as $r)
-                <p>{{ $r->recipe_name }}</p>
-                <p>{{ $r->id_user }}</p>
-                <p>{{ $r->cooking_time }}</p>
-                <p>{{ $r->tag }}</p>
-                <p>{{ $r->description }}</p>
-                <p>{{ $r->rating }}</p>
-                <p>{{ $r->ingredients }}</p>
-                <p>{{ $r->steps }}</p>
-                <a href="/resep/edit/{{ $r->id }}">Edit</a>
-                <a href="/resep/hapus/{{ $r->id }}">Hapus</a>
-            @endforeach
+    <a href="/resep/tambah/">Tambah Resep</a>
+    @foreach ($resep as $r)
+        <p>{{ $r->recipe_name }}</p>
+        <p>{{ $r->id_user }}</p>
+        <p>Cooking time: {{ $r->cooking_time }} minutes</p>
+        <a href="/resep/view/{{ $r->id }}">Lihat Selengkapnya</a>
+    @endforeach
 </body>
 
 </html>
