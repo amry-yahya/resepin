@@ -47,4 +47,37 @@ class ResepController extends Controller
 
         return redirect('/resep');
     }
+
+    public function update($id, Request $request)
+    {
+        $this->validate($request, [
+            'recipe_name' => 'required',
+            'id_user' => 'required',
+            'cooking_time' => 'required',
+            'tag' => 'required',
+            'image' => 'required',
+            'description' => 'required',
+            'rating' => 'required',
+            'ingredients' => 'required',
+            'steps' => 'required',
+        ]);
+
+        $resep = Resep::find($id);
+        $resep->recipe_name = $request->recipe_name;
+        $resep->cooking_time = $request->cooking_time;
+        $resep->id_user = $request->id_user;
+        $resep->tag = $request->tag;
+        $resep->image = $request->image;
+        $resep->description = $request->description;
+        $resep->rating = $request->rating;
+        $resep->ingredients = $request->ingredients;
+        $resep->steps = $request->steps;
+        $resep->save();
+        return redirect('/resep');
+    }
+    public function edit($id)
+    {
+        $resep = Resep::find($id);
+        return view('resep_edit', ['resep' => $resep]);
+    }
 }

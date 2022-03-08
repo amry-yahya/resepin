@@ -18,6 +18,8 @@
                 <p>{{ $r->rating }}</p>
                 <p>{{ $r->ingredients }}</p>
                 <p>{{ $r->steps }}</p>
+                <a href="/resep/edit/{{ $r->id }}">Edit</a>
+                <a href="/resep/hapus/{{ $r->id }}">Hapus</a>
             @endforeach
 </body>
 
