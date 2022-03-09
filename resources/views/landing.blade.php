@@ -15,12 +15,14 @@
         <a href="./">
             <div class="logo">Resepin</div>
         </a>
-        <div class="nav-bar">
-            <div class="nav-item">About</div>
-            <div class="nav-item">
-                <div class="button"><a href="./join">Join</a></div>
+        @if (is_null(Auth::id()))
+            <div class="nav-bar">
+                <div class="nav-item">About</div>
+                <div class="nav-item">
+                    <div class="button"><a href="./join">Join</a></div>
+                </div>
             </div>
-        </div>
+        @endif
     </header>
 
     <div class="content">
@@ -29,15 +31,16 @@
 
         <div class="search">
             <form action="/landing/cari" method="GET">
-            <div class="search-wrapper">
-                    <input type="search" class="search-bar" name="cari" placeholder="Cari resep" value="{{ old('cari') }}" autocomplete="off">
-                    <button type="submit" class="search-button" value="CARI" > 
-                        <img  src={{ URL::asset('images/search-icon.png') }} class="search-icon">
+                <div class="search-wrapper">
+                    <input type="search" class="search-bar" name="cari" placeholder="Cari resep"
+                        value="{{ old('cari') }}" autocomplete="off">
+                    <button type="submit" class="search-button" value="CARI">
+                        <img src={{ URL::asset('images/search-icon.png') }} class="search-icon">
                     </button>
-            </div>
-        </form>
+                </div>
+            </form>
         </div>
-        
+
 
         <div class="category">
             <div class="category-item" type="dessert">Dessert</div>

@@ -15,9 +15,8 @@ use App\Http\Controllers\UploadController;
 |
 */
 
-Route::get('/', function () {
-    return redirect('/register');
-});
+Route::get('/landing',[ResepController::class, 'index']);
+Route::get('/landing/cari',[ResepController::class, 'cari']);
 
 Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
     Route::get('/', [ResepController::class, 'index']);
@@ -28,10 +27,6 @@ Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
     Route::get('/explore', [ResepController::class, 'explore']);
     Route::get('/about', [ResepController::class, 'about']);
     Route::get('/resep_saya', [ResepController::class, 'resep_saya']);
-
-    Route::get('/landing',[ResepController::class, 'index']);
-    Route::get('/landing/cari',[ResepController::class, 'cari']);
-
     Route::get('/resep/tambah', [ResepController::class, 'tambah']);
     Route::post('/resep/store', [ResepController::class, 'store']);
     Route::get('/resep/view/{id}', [ResepController::class, 'view']);

@@ -10,13 +10,17 @@
 </head>
 <body>
     <header>
-        <a href="../"><div class="logo">Resepin</div></a>
-        <div class="nav-bar">
-            <div class="nav-item">About</div>
-            <div class="nav-item">
-                <div class="button"><a href="./join/">Join</a></div>
+        <a href="./">
+            <div class="logo">Resepin</div>
+        </a>
+        @if (is_null(Auth::id()))
+            <div class="nav-bar">
+                <div class="nav-item">About</div>
+                <div class="nav-item">
+                    <div class="button"><a href="./join">Join</a></div>
+                </div>
             </div>
-        </div>
+        @endif
     </header>
     <div class="content">
         <div class="search">
