@@ -69,7 +69,7 @@
 
     <img src={{ URL::asset('images/background.png') }} class="background">
     
-    <a href="resep_saya">
+    <a href="{{ URL::to('/') }}/resep_saya">
         <div class="resep-button bg-dark">
             <img src={{ URL::asset('images/explore/recipe-book.png') }} alt="">
         </div>
