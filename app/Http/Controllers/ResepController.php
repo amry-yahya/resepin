@@ -12,7 +12,7 @@ class ResepController extends Controller
     //
     public function index()
     {
-        $resep = Resep::all();
+        $resep = [];
         return view('landing', ['resep' => $resep]);
     }
 
@@ -27,6 +27,21 @@ class ResepController extends Controller
         $resep = Resep::all();
         return view('explore', ['resep' => $resep]);
     }
+
+    public function cari(Request $request)
+	{
+		// menangkap data pencarian
+		$cari = $request->cari;
+ 
+    		// mengambil data dari table resep sesuai pencarian data
+		$resep = DB::table('reseps')
+		->where('recipe_name','like',"%".$cari."%")
+		->paginate();
+ 
+    		// mengirim data resep ke view index
+		return view('landing',['resep' => $resep]);
+ 
+	}
 
     
     public function about()

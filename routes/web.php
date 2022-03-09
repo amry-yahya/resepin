@@ -21,13 +21,15 @@ Route::get('/', function () {
 
 Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
     Route::get('/', [ResepController::class, 'index']);
-    Route::get('/', [ResepController::class, 'index']);
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
     Route::get('/join', [ResepController::class, 'join']);
     Route::get('/explore', [ResepController::class, 'explore']);
     Route::get('/about', [ResepController::class, 'about']);
+
+    Route::get('/landing',[ResepController::class, 'index']);
+    Route::get('/landing/cari',[ResepController::class, 'cari']);
 
     Route::get('/resep/tambah', [ResepController::class, 'tambah']);
     Route::post('/resep/store', [ResepController::class, 'store']);
