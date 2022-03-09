@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <form method="post" action="/resep/update/{{ $resep->id }}">
+    <form method="post" action="{{ URL::to('/') }}/resep/update/{{ $resep->id }}">
 
         {{ csrf_field() }}
         {{ method_field('PUT') }}
