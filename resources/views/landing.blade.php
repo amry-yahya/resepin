@@ -51,11 +51,11 @@
 
 
         <div class="category">
-            <div class="category-item" type="dessert">Dessert</div>
-            <div class="category-item" type="lunch">Lunch</div>
-            <div class="category-item" type="dinner">Dinner</div>
-            <div class="category-item" type="breakfast">Breakfast</div>
-            <div class="category-item" type="beverage">Beverage</div>
+            <div class="category-item" type="dessert"><a href="kategori/dessert">dessert</a></div>
+            <div class="category-item" type="lunch"><a href="kategori/lunch">lunch</a></div>
+            <div class="category-item" type="dinner"><a href="kategori/dinner">dinner</a></div>
+            <div class="category-item" type="breakfast"><a href="kategori/breakfast">breakfast</a></div>
+            <div class="category-item" type="beverage"><a href="kategori/beverage">beverage</a></div>
         </div>
 
         <div class="button explore">

@@ -43,6 +43,18 @@ class ResepController extends Controller
     		// mengirim data resep ke view index
 		return view('explore',['resep' => $resep]);
 	}
+    public function kategori(Request $request)
+	{
+		// menangkap data pencarian
+ 
+    		// mengambil data dari table resep sesuai pencarian data
+		$resep = DB::table('reseps')
+		->where('tag','like',"%".$request."%")
+		->paginate();
+ 
+    		// mengirim data resep ke view index
+		return view('explore',['resep' => $resep]);
+	}
 
     public function resep_saya(){
         $id = Auth::id();
