@@ -17,9 +17,7 @@
         </a>
         @if (is_null(Auth::id()))
             <div class="nav-bar">
-                <a href="{{ URL::to('/') }}/about">
-                    <div class="nav-item dark">About</div>
-                </a>
+                <div class="nav-item"><a href="{{ URL::to('/') }}/about">About</a></div>
                 <div class="nav-item">
                     <div class="button"><a href="{{ URL::to('/') }}/register">Join</a></div>
                 </div>

@@ -68,8 +68,7 @@ class ResepController extends Controller
     
     public function about()
     {
-        $resep = Resep::all();
-        return view('about', ['resep' => $resep]);
+        return view('about');
     }
 
     public function tambah()

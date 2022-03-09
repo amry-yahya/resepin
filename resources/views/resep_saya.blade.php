@@ -33,57 +33,60 @@
             </div>
 
             <div class="resep-container">
-                
-                
+
+
                 @foreach ($resep as $r)
-                    
-                <a href="/resep/view/{{ $r->id }}">
-                    <div class="resep dark">
-                        <div class="img" id="gambar">
-                            <img src="{{ URL::to('/') }}/gambar/{{ $r->id }}/{{ $r->image }}" alt="">
-                        </div>
-    
-                        <div class="desc">
-                            <div class="desc-col">
-                                <div class="rating">
-                                    @for ($i = 0; $i < $r->rating; $i++)
-                                        <img id="star" src={{ URL::asset('images\rating\star.png') }} alt="">
-                                    @endfor
-                                    @for ($i = 0; $i < 5 - $r->rating; $i++)
-                                        <img id="star" src={{ URL::asset('images\rating\no-star.png') }} alt="">
-                                    @endfor
+                    <a href="/resep/view/{{ $r->id }}">
+                        <div class="resep dark">
+                            <div class="img" id="gambar">
+                                <img src="{{ URL::to('/') }}/gambar/{{ $r->id }}/{{ $r->image }}" alt="">
+                            </div>
+
+                            <div class="desc">
+                                <div class="desc-col">
+
+                                    <div class="rating">
+                                        @if ($r->jumlah_rater == 0)
+                                            <p>Belum dirating</p>
+                                        @else
+                                            @for ($i = 0; $i < ($r->rating)/($r->jumlah_rater); $i++)
+                                                <img id="star" src={{ URL::asset('images\rating\star.png') }} alt="">
+                                            @endfor
+                                            @for ($i = 0; $i < 5 - ($r->rating)/($r->jumlah_rater); $i++)
+                                                <img id="star" src={{ URL::asset('images\rating\no-star.png') }}
+                                                    alt="">
+                                            @endfor
+                                        @endif
+
+                                    </div>
+                                    <div class="time">
+                                        <img src={{ URL::asset('images\explore\back-in-time.png') }} alt="">
+
+                                        {{ $r->cooking_time }} menit
+                                    </div>
                                 </div>
-                                <div class="time">
-                                    <img src={{ URL::asset('images\explore\back-in-time.png') }} alt="">
-                                    
-                                    {{ $r->cooking_time }} menit
+                                <div class="desc-col">
+                                    <div class="nama ">
+                                        {{ $r->recipe_name }}
+                                    </div>
+
                                 </div>
                             </div>
-                            <div class="desc-col">
-                                <div class="nama ">
-                                    {{ $r->recipe_name }}
-                                </div>
-    
-                            </div>
                         </div>
+                    </a>
+                @endforeach
+
+
+                <img src={{ URL::asset('images/background.png') }} class="background">
+                <a href="{{ URL::to('/') }}/resep/tambah">
+                    <div class="resep-button bg-dark">
+                        <img src={{ URL::asset('images/add-icon.png') }} alt="">
                     </div>
                 </a>
 
-                
-    
-                @endforeach
-    
-                
-             <img src={{ URL::asset('images/background.png') }} class="background">
-             <a href="{{ URL::to('/') }}/resep/tambah">
-                 <div class="resep-button bg-dark">
-                     <img src={{ URL::asset('images/add-icon.png') }} alt="">
-                 </div>
-             </a>
-        
-    
+
             </div>
-    
+
 
         </div>
     </div>

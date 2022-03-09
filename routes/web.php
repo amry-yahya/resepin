@@ -18,6 +18,7 @@ use App\Http\Controllers\KomentarController;
 
 
 Route::get('/',[ResepController::class, 'index']);
+Route::get('/about', [ResepController::class, 'about']);
 Route::get('/landing',[ResepController::class, 'index']);
 Route::get('/landing/cari',[ResepController::class, 'cari']);
 Route::get('/kategori/{tag}',[ResepController::class, 'kategori']);

@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <form method="post" action="/resep/update/{{ $resep->id }}">
+    <form method="post" action="{{ URL::to('/') }}/resep/update/{{ $resep->id }}">
 
         {{ csrf_field() }}
         {{ method_field('PUT') }}
@@ -54,14 +54,6 @@
             @if ($errors->has('description'))
                 <div class="text-danger">
                     {{ $errors->first('description') }}
-                </div>
-            @endif
-        </div>
-        <div class="form-group">
-            <input type="number" name="rating" class="form-control" placeholder="rating" value="{{ $resep->rating }}">
-            @if ($errors->has('rating'))
-                <div class="text-danger">
-                    {{ $errors->first('rating') }}
                 </div>
             @endif
         </div>
