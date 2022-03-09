@@ -29,27 +29,49 @@
         <div class="line"></div>
 
         <div class="resep-container">
-            <div class="resep">
-                <div class="img" id="gambar">
-                    <img src="../assets/explore/dummy1.jpg" alt="" >
+            @foreach ($resep as $r)
+                
+            <a href="/resep/view/{{ $r->id }}">
+                <div class="resep dark">
+                    <div class="img" id="gambar">
+                        <img src="gambar/{{ $r->id }}/{{ $r->image }}" alt="">
+                    </div>
 
+                    <div class="desc">
+                        <div class="desc-col">
+                            <div class="rating">
+                                @for ($i = 0; $i < $r->rating; $i++)
+                                    <img id="star" src={{ URL::asset('images\rating\star.png') }} alt="">
+                                @endfor
+                                @for ($i = 0; $i < 5 - $r->rating; $i++)
+                                    <img id="star" src={{ URL::asset('images\rating\no-star.png') }} alt="">
+                                @endfor
+                            </div>
+                            <div class="time">
+                                <img src={{ URL::asset('images\explore\back-in-time.png') }} alt="">
+                                
+                                {{ $r->cooking_time }} menit
+                            </div>
+                        </div>
+                        <div class="desc-col">
+                            <div class="nama ">
+                                {{ $r->recipe_name }}
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
-                <a href="/resep/tambah/">Tambah Resep</a>
-                @foreach ($resep as $r)
-                    <p>{{ $r->recipe_name }}</p>
-                    <p>{{ $r->id_user }}</p>
-                    <img src="gambar/{{ $r->id }}/{{ $r->image }}" alt="">
-                    <p>Cooking time: {{ $r->cooking_time }} minutes</p>
-                    <a href="/resep/view/{{ $r->id }}">Lihat Selengkapnya</a>
-                @endforeach
+            </a>
 
-            </div>
-
-            
-
+            @endforeach
         </div>
     </div>
 
     <img src={{ URL::asset('images/background.png') }} class="background">
+    
+    <div class="resep-button bg-dark">
+        <img src={{ URL::asset('images/explore/recipe-book.png') }} alt="">
+    </div>
 </body>
 </html>
+
