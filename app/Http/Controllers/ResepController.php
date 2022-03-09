@@ -147,6 +147,6 @@ class ResepController extends Controller
     {
         $resep = Resep::find($id);
         $resep->delete();
-        return redirect('/resep');
+        return redirect('/resep_saya');
     }
 }
