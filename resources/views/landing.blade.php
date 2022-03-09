@@ -26,12 +26,14 @@
     <div class="content">
         <div class="tittle-text"><b>Temukan resep favoritmu</b> diantara ratusan resep lainnya</div>
         <img src={{ URL::asset('images/landing/woman.png') }} class="bg-illust" alt="">
-        <div class="search">
-            <form action="/landing/cari" method="GET">
-                <input type="text" name="cari" placeholder="Cari resep .." value="{{ old('cari') }}">
-                <input type="submit" value="CARI">
-            </form>
 
+        <div class="search">
+            <div class="search-wrapper">
+                <form action="/landing/cari" method="GET">
+                    <input type="text" name="cari" placeholder="Cari resep .." value="{{ old('cari') }}">
+                    <input type="submit" value="CARI">
+                </form>
+            </div>
         </div>
         <h1>Hasil Pencarian</h1>
         @foreach ($resep as $r)
@@ -51,7 +53,7 @@
         </div>
 
         <div class="button explore">
-            <a href="./explore">Explore More</a>
+            <a href="{{ URL::to('/') }}/explore">Explore More</a>
 
         </div>
 
