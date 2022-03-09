@@ -12,7 +12,8 @@
     <header>
         <a href="{{ URL::to('/') }}/">
             <div class="logo">Resepin</div>
-        </a>@if (is_null(Auth::id()))
+        </a>
+    @if (is_null(Auth::id()))
         <div class="nav-bar">
             <div class="nav-item">About</div>
             <div class="nav-item">
@@ -38,7 +39,7 @@
     <div class="content">
         <div class="container">
             
-            <div class="resep-view-button-wrapper">
+            <div class="resep-view-button-wrapper" >
                 @if ($resep->id_user===Auth::id())        
                     <a href="/resep/edit/{{ $resep->id }}">
                     <div class="button resep-view-button">Edit</div>

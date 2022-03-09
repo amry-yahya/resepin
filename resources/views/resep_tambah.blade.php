@@ -96,24 +96,7 @@
                 <div class="form-group">
                     <input type="submit" class="btn btn-success button" value="Simpan">
                 </div>
-            @endif
-        </div>
-        <div class="form-group">
-            <textarea name="ingredients" id="" cols="30" rows="10" placeholder="ingredients"></textarea>
-            @if ($errors->has('ingredients'))
-                <div class="text-danger">
-                    {{ $errors->first('ingredients') }}
-                </div>
-            @endif
-        </div>
-        <div class="form-group">
-            <textarea name="steps" id="" cols="30" rows="10" placeholder="steps"></textarea>
-            @if ($errors->has('steps'))
-                <div class="text-danger">
-                    {{ $errors->first('steps') }}
-                </div>
-            @endif
-        </div> 
+            </div></div>
 
         </div>
     </div>
