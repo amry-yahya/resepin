@@ -31,7 +31,7 @@
             <div class="header-text">
                 Resep Saya
             </div>
-            <a href="(tambah resep)">
+            <a href="resep/tambah">
                 <div class="button">Tambah Resep</div>
             </a>
 
