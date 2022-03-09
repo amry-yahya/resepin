@@ -6,6 +6,7 @@ use App\Models\Resep;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class ResepController extends Controller
 {
@@ -42,8 +43,12 @@ class ResepController extends Controller
 		return view('explore',['resep' => $resep]);
 	}
 
-    public function resep_saya(Request $request){
-        return view('resep_saya');
+    public function resep_saya(){
+        $id = Auth::id();
+        $resep = DB::table('reseps')
+        ->whereIn('id_user', [$id])
+        ->get();
+        return view('resep_saya',['resep'=>$resep]);
     }
 
     

@@ -21,23 +21,11 @@ class UploadController extends Controller
 
 		// menyimpan data file yang diupload ke variabel $file
 		$file = $request->file('file');
-
-      	        // nama file
-		echo 'File Name: '.$file->getClientOriginalName();
-		echo '<br>';
-		echo 'File Extension: '.$file->getClientOriginalExtension();
-		echo '<br>';
-		echo 'File Real Path: '.$file->getRealPath();
-		echo '<br>';
-		echo 'File Size: '.$file->getSize();
-		echo '<br>';
-		echo 'File Mime Type: '.$file->getMimeType();
-		echo '<br>';
 		$tmp=Resep::find($request->image);
 		$tmp->image=$file->getClientOriginalName();
 		$tujuan_upload = 'gambar/'.$tmp->id;
 		$tmp->save();
 		$file->move($tujuan_upload,$file->getClientOriginalName());
-		return redirect("resep");
+		return redirect("resep_saya");
 	}
 }
