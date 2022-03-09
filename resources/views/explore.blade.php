@@ -17,7 +17,7 @@
             <div class="nav-bar">
                 <div class="nav-item">About</div>
                 <div class="nav-item">
-                    <div class="button"><a href="./register">Join</a></div>
+                    <div class="button"><a href="{{ URL::to('/') }}/register">Join</a></div>
                 </div>
             </div>
         @endif
