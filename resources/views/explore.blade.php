@@ -34,7 +34,7 @@
             <a href="/resep/view/{{ $r->id }}">
                 <div class="resep dark">
                     <div class="img" id="gambar">
-                        <img src="gambar/{{ $r->id }}/{{ $r->image }}" alt="">
+                        <img src="{{ URL::to('/') }}/gambar/{{ $r->id }}/{{ $r->image }}" alt="">
                     </div>
 
                     <div class="desc">
