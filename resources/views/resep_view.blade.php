@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <a href="/resep">Back</a>
+    <a href="/explore">Back</a>
     <p>{{ $resep->recipe_name }}</p>
     <p>{{ $resep->id_user }}</p>
     <p>{{ $resep->cooking_time }}</p>
