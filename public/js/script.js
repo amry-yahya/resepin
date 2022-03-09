@@ -7,14 +7,19 @@ console.log(forgotPasswordButton)
 
 forgotPasswordButton.addEventListener('click', () =>{
 
-    const currentModal = document.getElementById('modalSignIn')
+    const currentModals = document.querySelectorAll('.modal')
+
+    currentModals.forEach( currentModal =>{
+        console.log(currentModal)
+        closeModal(currentModal)
+    })
+
     const modal = document.getElementById('modalForgotPassword')
 
 
     event.preventDefault()
     
     openModal(modal)
-    closeModal(currentModal)
 })
 
 registerModalButton.addEventListener('click', () =>{
@@ -26,11 +31,15 @@ registerModalButton.addEventListener('click', () =>{
     hide(currentNavItem)
     unhide(navItem)
 
+    const currentModals = document.querySelectorAll('.modal')
+
+    currentModals.forEach( currentModal =>{
+        console.log(currentModal)
+        closeModal(currentModal)
+    })
     
-    const currentModal = document.getElementById('modalSignIn');
     const modal = document.getElementById('modalRegister');
 
-    closeModal(currentModal);
     openModal(modal);
 
 })
@@ -47,7 +56,7 @@ signInModalButton.addEventListener('click', () =>{
 
     currentModals.forEach( currentModal =>{
         console.log(currentModal)
-        close(currentModal)
+        closeModal(currentModal)
     })
 
     const modal = document.getElementById('modalSignIn');
