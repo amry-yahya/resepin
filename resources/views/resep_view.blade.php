@@ -19,7 +19,11 @@
     <p>{{ $resep->cooking_time }}</p>
     <p>{{ $resep->tag }}</p>
     <p style="white-space: pre-line">{{ $resep->description }}</p>
-    <p>{{ $resep->rating/$resep->jumlah_rater }}</p>
+    @if (($resep->jumlah_rater)==0)
+        <p>Belum dirating</p>
+    @else
+        <p>{{ ($resep->rating)/($resep->jumlah_rater )}}</p> 
+    @endif
     <img src="{{ URL::to('/') }}/gambar/{{ $resep->id }}/{{ $resep->image }}" alt="gambar tidak ada">
     <p style="white-space: pre-line">{{ $resep->ingredients }}</p>
     <p style="white-space: pre-line">{{ $resep->steps }}</p>
