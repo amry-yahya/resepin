@@ -35,14 +35,6 @@
                 </form>
             </div>
         </div>
-        <h1>Hasil Pencarian</h1>
-        @foreach ($resep as $r)
-            <p>{{ $r->recipe_name }}</p>
-            <p>{{ $r->id_user }}</p>
-            <img src="gambar/{{ $r->id }}/{{ $r->image }}" alt="">
-            <p>Cooking time: {{ $r->cooking_time }} minutes</p>
-            <a href="/resep/view/{{ $r->id }}">Lihat Selengkapnya</a>
-        @endforeach
 
         <div class="category">
             <div class="category-item" type="dessert">Dessert</div>

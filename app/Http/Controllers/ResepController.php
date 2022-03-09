@@ -39,7 +39,7 @@ class ResepController extends Controller
 		->paginate();
  
     		// mengirim data resep ke view index
-		return view('landing',['resep' => $resep]);
+		return view('explore',['resep' => $resep]);
  
 	}
 
