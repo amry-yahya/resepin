@@ -13,7 +13,7 @@
     @foreach ($resep as $r)
         <p>{{ $r->recipe_name }}</p>
         <p>{{ $r->id_user }}</p>
-        <img src="gambar/{{ $r->image }}" alt="">
+        <img src="gambar/{{ $r->id }}/{{ $r->image }}" alt="">
         <p>Cooking time: {{ $r->cooking_time }} minutes</p>
         <a href="/resep/view/{{ $r->id }}">Lihat Selengkapnya</a>
     @endforeach

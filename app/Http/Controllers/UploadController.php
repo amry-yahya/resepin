@@ -35,8 +35,8 @@ class UploadController extends Controller
 		echo '<br>';
 		$tmp=Resep::find($request->image);
 		$tmp->image=$file->getClientOriginalName();
+		$tujuan_upload = 'gambar/'.$tmp->id;
 		$tmp->save();
-		$tujuan_upload = 'gambar';
 		$file->move($tujuan_upload,$file->getClientOriginalName());
 		return redirect("resep");
 	}

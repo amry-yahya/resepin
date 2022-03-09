@@ -46,16 +46,8 @@
                 </div>
             @endif
         </div>
-        {{-- <div class="form-group">
-            <input type="text" name="image" class="form-control" placeholder="image">
-            @if ($errors->has('image'))
-                <div class="text-danger">
-                    {{ $errors->first('image') }}
-                </div>
-            @endif
-        </div> --}}
         <div class="form-group">
-            <input type="text" name="description" class="form-control" placeholder="description">
+            <textarea name="description" id="" cols="30" rows="10" placeholder="description"></textarea>
             @if ($errors->has('description'))
                 <div class="text-danger">
                     {{ $errors->first('description') }}
@@ -71,7 +63,7 @@
             @endif
         </div>
         <div class="form-group">
-            <input type="text" name="ingredients" class="form-control" placeholder="ingredients">
+            <textarea name="ingredients" id="" cols="30" rows="10" placeholder="ingredients"></textarea>
             @if ($errors->has('ingredients'))
                 <div class="text-danger">
                     {{ $errors->first('ingredients') }}
@@ -79,7 +71,7 @@
             @endif
         </div>
         <div class="form-group">
-            <input type="text" name="steps" class="form-control" placeholder="steps">
+            <textarea name="steps" id="" cols="30" rows="10" placeholder="steps"></textarea>
             @if ($errors->has('steps'))
                 <div class="text-danger">
                     {{ $errors->first('steps') }}
