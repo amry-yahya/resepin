@@ -12,15 +12,27 @@
     <header>
         <a href="{{ URL::to('/') }}/">
             <div class="logo">Resepin</div>
-        </a>
-        @if (is_null(Auth::id()))
-            <div class="nav-bar">
-                <div class="nav-item">About</div>
-                <div class="nav-item">
-                    <div class="button"><a href="./join">Join</a></div>
-                </div>
+        </a>@if (is_null(Auth::id()))
+        <div class="nav-bar">
+            <div class="nav-item">About</div>
+            <div class="nav-item">
+                <div class="button"><a href="{{ URL::to('/') }}/register">Join</a></div>
             </div>
-        @endif
+        </div>
+    @else
+        <form method="POST" action="{{ route('logout') }}">
+            @csrf
+            <div class="nav-bar">
+                <div class="nav-item">
+                    <x-jet-responsive-nav-link href="{{ route('logout') }}" onclick="event.preventDefault();
+                                this.closest('form').submit();" class="button">
+                        {{ __('Log Out') }}
+                    </x-jet-responsive-nav-link>
+                </div>
+
+            </div>
+        </form>
+    @endif
     </header>
 
     <div class="content">

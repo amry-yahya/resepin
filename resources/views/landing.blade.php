@@ -17,7 +17,9 @@
         </a>
         @if (is_null(Auth::id()))
             <div class="nav-bar">
-                <div class="nav-item">About</div>
+                <a href="{{ URL::to('/') }}/about">
+                    <div class="nav-item dark">About</div>
+                </a>
                 <div class="nav-item">
                     <div class="button"><a href="{{ URL::to('/') }}/register">Join</a></div>
                 </div>
@@ -25,10 +27,15 @@
         @else
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
-                <x-jet-responsive-nav-link href="{{ route('logout') }}" onclick="event.preventDefault();
-                            this.closest('form').submit();">
-                    {{ __('Log Out') }}
-                </x-jet-responsive-nav-link>
+                <div class="nav-bar">
+                    <div class="nav-item">
+                        <x-jet-responsive-nav-link href="{{ route('logout') }}" onclick="event.preventDefault();
+                                    this.closest('form').submit();" class="button">
+                            {{ __('Log Out') }}
+                        </x-jet-responsive-nav-link>
+                    </div>
+
+                </div>
             </form>
         @endif
     </header>
