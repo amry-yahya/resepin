@@ -15,7 +15,7 @@
         {{ $resep->recipe_name }}
     </div>
     <p></p>
-    <p>{{ $resep->id_user }}</p>
+    <p>{{ $resep->user_name }}</p>
     <p>{{ $resep->cooking_time }}</p>
     <p>{{ $resep->tag }}</p>
     <p style="white-space: pre-line">{{ $resep->description }}</p>

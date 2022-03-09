@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Resep;
+use App\Models\Komentar;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
-use App\Models\Komentar;
 use Illuminate\Support\Facades\Auth;
 
 class ResepController extends Controller
@@ -85,20 +86,21 @@ class ResepController extends Controller
             'cooking_time' => 'required',
             'tag' => 'required',
             'description' => 'required',
-            'rating' => 'required',
             'ingredients' => 'required',
             'steps' => 'required',
         ]);
-
+        $user = User::find($request->id_user);
         Resep::create([
             'recipe_name' => $request->recipe_name,
             'id_user' => $request->id_user,
+            'user_name' => $user->name,
             'cooking_time' => $request->cooking_time,
             'tag' => $request->tag,
             'description' => $request->description,
-            'rating' => $request->rating,
+            'rating' => 0,
             'ingredients' => $request->ingredients,
             'steps' => $request->steps,
+            'jumlah_rater' => 0,
         ]);
         $tmp = DB::table('reseps')->latest('id')->first();
         return redirect('upload/'.$tmp->id);
@@ -116,10 +118,11 @@ class ResepController extends Controller
             'ingredients' => 'required',
             'steps' => 'required',
         ]);
-
+        $user = User::find($request->id_user);
         $resep = Resep::find($id);
         $resep->recipe_name = $request->recipe_name;
         $resep->cooking_time = $request->cooking_time;
+        $resep->user_name = $user->name;
         $resep->id_user = $request->id_user;
         $resep->tag = $request->tag;
         $resep->description = $request->description;

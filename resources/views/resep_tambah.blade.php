@@ -31,7 +31,7 @@
             @endif
         </div>
         <div class="form-group" hidden> 
-            <input type="number" name="id_user" class="form-control" value="{{ Auth::id(); }}">
+            <input type="number" name="id_user" class="form-control" value="{{ Auth::id() }}">
             @if ($errors->has('id_user'))
                 <div class="text-danger">
                     {{ $errors->first('id_user') }}
