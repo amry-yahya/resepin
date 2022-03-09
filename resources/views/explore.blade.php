@@ -20,14 +20,11 @@
     </header>
     <div class="content">
         <div class="search">
-            <form action="/landing/cari" method="GET">
-            <div class="search-wrapper">
-                    <input type="search" class="search-bar" name="cari" placeholder="Cari resep" value="{{ old('cari') }}" autocomplete="off">
-                    <button type="submit" class="search-button" value="CARI" > 
-                        <img  src={{ URL::asset('images/search-icon.png') }} class="search-icon">
-                    </button>
-            </div>
-        </form>
+        <div class="search-wrapper">
+            <input type="search" class="search-bar" placeholder="Cari resep" >
+            <img src={{ URL::asset('images/search-icon.png') }} alt="" class="search-icon">
+        </div>
+        </div>
         
         <div class="line"></div>
 
