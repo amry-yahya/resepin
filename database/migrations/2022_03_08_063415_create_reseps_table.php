@@ -18,11 +18,13 @@ class CreateResepsTable extends Migration
             $table->timestamps();
             $table->string('recipe_name');
             $table->bigInteger('id_user');
+            $table->string('user_name');
             $table->integer('cooking_time');
             $table->string('tag'); 
             $table->string('image')->nullable();
             $table->string('description'); 
             $table->float('rating');
+            $table->float('jumlah_rater');
             $table->string('ingredients');
             $table->string('steps');
         });

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Komentar;
+use App\Models\Resep;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -17,8 +18,11 @@ class KomentarController extends Controller
             'rating' => 'required',
             'komen' => 'required'
         ]);
-        
+        $resep = Resep::find($request->id_recipe);
         $user = User::find($request->id_user);
+        $resep->rating+=$request->rating;
+        $resep->jumlah_rater++;
+        $resep->save();
         Komentar::create([
             'id_recipe' => $request->id_recipe,
             'id_user' => $request->id_user,

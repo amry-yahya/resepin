@@ -31,6 +31,9 @@
             <div class="header-text">
                 Resep Saya
             </div>
+            <a href="resep/tambah">
+                <div class="button">Tambah Resep</div>
+            </a>
 
             <div class="resep-container">
                 

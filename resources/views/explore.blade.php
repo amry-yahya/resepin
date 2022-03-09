@@ -59,10 +59,10 @@
                     <div class="desc">
                         <div class="desc-col">
                             <div class="rating">
-                                @for ($i = 0; $i < $r->rating; $i++)
+                                @for ($i = 0; $i < ($r->rating/$r->jumlah_rater); $i++)
                                     <img id="star" src={{ URL::asset('images\rating\star.png') }} alt="">
                                 @endfor
-                                @for ($i = 0; $i < 5 - $r->rating; $i++)
+                                @for ($i = 0; $i < 5 - ($r->rating/$r->jumlah_rater); $i++)
                                     <img id="star" src={{ URL::asset('images\rating\no-star.png') }} alt="">
                                 @endfor
                             </div>
