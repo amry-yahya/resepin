@@ -34,15 +34,14 @@
                     <img src="../assets/explore/dummy1.jpg" alt="" >
 
                 </div>
-
-                <div class="desc">
-                    <div class="time">
-                        <img src="../assets/explore/back-in-time.png" alt=""> 30 menit
-                    </div>
-                    <div class="nama">
-                        Pudding Dummy
-                    </div>
-                </div>
+                <a href="/resep/tambah/">Tambah Resep</a>
+                @foreach ($resep as $r)
+                    <p>{{ $r->recipe_name }}</p>
+                    <p>{{ $r->id_user }}</p>
+                    <img src="gambar/{{ $r->id }}/{{ $r->image }}" alt="">
+                    <p>Cooking time: {{ $r->cooking_time }} minutes</p>
+                    <a href="/resep/view/{{ $r->id }}">Lihat Selengkapnya</a>
+                @endforeach
 
             </div>
             <div class="resep">as</div>
