@@ -17,12 +17,27 @@
         </a>
         @if (is_null(Auth::id()))
             <div class="nav-bar">
-                <div class="nav-item">About</div>
+                <a href="{{ URL::to('/') }}/about">
+                    <div class="nav-item dark">About</div>
+                </a>
                 <div class="nav-item">
                     <div class="button"><a href="{{ URL::to('/') }}/register">Join</a></div>
                 </div>
             </div>
-        @endif
+        @else
+        <form method="POST" action="{{ route('logout') }}">
+            @csrf
+            <div class="nav-bar">
+                <div class="nav-item">
+                    <x-jet-responsive-nav-link href="{{ route('logout') }}" onclick="event.preventDefault();
+                                this.closest('form').submit();" class="button">
+                        {{ __('Log Out') }}
+                    </x-jet-responsive-nav-link>
+                </div>
+
+            </div>
+        </form>
+    @endif
     </header>
     <div class="content">
         <div class="search">
@@ -77,12 +92,14 @@
     </div>
 
     <img src={{ URL::asset('images/background.png') }} class="background">
-
-    <a href="{{ URL::to('/') }}/resep_saya">
-        <div class="resep-button bg-dark">
-            <img src={{ URL::asset('images/explore/recipe-book.png') }} alt="">
-        </div>
-    </a>
+    
+    @if (!is_null(Auth::id()))
+        <a href="{{ URL::to('/') }}/resep_saya">
+            <div class="resep-button bg-dark">
+                <img src={{ URL::asset('images/explore/recipe-book.png') }} alt="">
+            </div>
+        </a>
+    @endif
 </body>
 
 </html>

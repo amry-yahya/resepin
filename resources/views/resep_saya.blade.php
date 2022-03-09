@@ -31,9 +31,6 @@
             <div class="header-text">
                 Resep Saya
             </div>
-            <a href="resep/tambah">
-                <div class="button">Tambah Resep</div>
-            </a>
 
             <div class="resep-container">
                 
@@ -78,6 +75,11 @@
     
                 
              <img src={{ URL::asset('images/background.png') }} class="background">
+             <a href="{{ URL::to('/') }}/resep/tambah">
+                 <div class="resep-button bg-dark">
+                     <img src={{ URL::asset('images/add-icon.png') }} alt="">
+                 </div>
+             </a>
         
     
             </div>
