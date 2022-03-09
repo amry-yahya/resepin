@@ -6,8 +6,10 @@ const forgotPasswordButton = document.querySelector(['#forgot-password .link'])
 console.log(forgotPasswordButton)
 
 forgotPasswordButton.addEventListener('click', () =>{
+
     const currentModal = document.getElementById('modalSignIn')
     const modal = document.getElementById('modalForgotPassword')
+
 
     event.preventDefault()
     
@@ -41,10 +43,14 @@ signInModalButton.addEventListener('click', () =>{
     hide(currentNavItem)
     unhide(navItem)
 
-    const currentModal = document.getElementById('modalRegister');
-    const modal = document.getElementById('modalSignIn');
+    const currentModals = document.querySelectorAll('.modal')
 
-    closeModal(currentModal);
+    currentModals.forEach( currentModal =>{
+        console.log(currentModal)
+        close(currentModal)
+    })
+
+    const modal = document.getElementById('modalSignIn');
     openModal(modal);
 
 })
