@@ -28,13 +28,16 @@
         <img src={{ URL::asset('images/landing/woman.png') }} class="bg-illust" alt="">
 
         <div class="search">
+            <form action="/landing/cari" method="GET">
             <div class="search-wrapper">
-                <form action="/landing/cari" method="GET">
-                    <input type="text" name="cari" placeholder="Cari resep .." value="{{ old('cari') }}">
-                    <input type="submit" value="CARI">
-                </form>
+                    <input type="search" class="search-bar" name="cari" placeholder="Cari resep" value="{{ old('cari') }}" autocomplete="off">
+                    <button type="submit" class="search-button" value="CARI" > 
+                        <img  src={{ URL::asset('images/search-icon.png') }} class="search-icon">
+                    </button>
             </div>
+        </form>
         </div>
+        
 
         <div class="category">
             <div class="category-item" type="dessert">Dessert</div>
@@ -46,7 +49,6 @@
 
         <div class="button explore">
             <a href="{{ URL::to('/') }}/explore">Explore More</a>
-
         </div>
 
     </div>
