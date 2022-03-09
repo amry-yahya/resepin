@@ -27,6 +27,7 @@ Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
     Route::get('/join', [ResepController::class, 'join']);
     Route::get('/explore', [ResepController::class, 'explore']);
     Route::get('/about', [ResepController::class, 'about']);
+    Route::get('/resep_saya', [ResepController::class, 'resep_saya']);
 
     Route::get('/landing',[ResepController::class, 'index']);
     Route::get('/landing/cari',[ResepController::class, 'cari']);
