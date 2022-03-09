@@ -85,7 +85,13 @@ header{
 .modal-grid{
     font-size: 1.5rem;
     padding: 1rem;
-    width: 25rem;
+    width: fit-content;
+}
+
+.grid{
+    
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
 }
 
 .tittle{
@@ -164,8 +170,15 @@ form[method="post"] input{
     padding: 0.5rem 1rem;
     border-radius: 0.3rem;
     border:3px solid rgba(16, 0, 43, 0.5);
-}
+}   
 
+form[method="post"] textarea{
+    font-family: Poppins;
+    border-radius: 0.3rem;
+    font-size: 1.05rem;
+    
+    border:3px solid rgba(16, 0, 43, 0.5);
+}
 form[method="post"] input[type="submit"]{
     background: rgba(90, 24,154, 1);
     color: white;
@@ -231,8 +244,6 @@ a{
     margin: 0;
     padding: 2rem 0 0 0;
 }
-
-
 
 /* Landing Page */
 .bg-illust{
@@ -656,3 +667,46 @@ a{
 .team-item .text{
     font-size: 1.5rem;
 }
+
+/* Tambah Resep */
+
+
+/* Upload Gambar */
+#modalUpload .tittle-text{
+    width: fit-content;
+}
+#modalUpload input{
+    width: 30rem;
+}
+
+#modalUpload [type="submit"]{
+    width: 32.5rem;
+}
+
+#komen{
+    padding: 1rem;
+    width: 100%;
+}
+#retmi{
+    margin: 2rem 0rem 0rem 0rem;
+}
+
+#uname{
+
+}
+
+.small-img{
+    width:10rem;
+    height: 10rem;
+}
+#modalTambah{
+    text-align: center;
+}
+#modalTambah .modal-body{
+    width: 100rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+

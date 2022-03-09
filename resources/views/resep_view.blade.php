@@ -115,20 +115,21 @@
                         <img id="star" src={{ URL::asset('images\rating\no-star.png') }} alt="">
                     @endfor 
                 </div>
+                @foreach ($komentar as $k)
+                    @if ($k->id_recipe === $resep->id)
+                        <div id="uname"><b>{{ $k->user_name }}</b><span> ({{ $k->rating }} <img id="star" src={{ URL::asset('images\rating\star.png') }} alt="">)</span></div>
+                        <p>{{ $k->komen }}</p>
+                    @endif
+                @endforeach
             </div>
 
-            <br>
-            <br>
         
         
-            @foreach ($komentar as $k)
-                @if ($k->id_recipe === $resep->id)
-                    <p>{{ $k->user_name }}</p>
-                    <p>{{ $k->rating }}</p>
-                    <p>{{ $k->komen }}</p>
-                @endif
-            @endforeach
-        
+
+            
+            <div class="tittle-text" id="retmi">
+                Rate me
+            </div>
             <form method="post" action="/komentar/store">
                 {{ csrf_field() }}
                 <div class="form-group" hidden>
@@ -148,7 +149,7 @@
                     @endif
                 </div>
                 <div class="form-group">
-                    <input type="number" name="rating" class="form-control" placeholder="rating">
+                    <input type="number" name="rating" class="form-control" id="reting" placeholder="Rating">
                     @if ($errors->has('rating'))
                         <div class="text-danger">
                             {{ $errors->first('rating') }}
@@ -156,7 +157,7 @@
                     @endif
                 </div>
                 <div class="form-group">
-                    <textarea name="komen" id="" cols="30" rows="10" placeholder="beri komenter..."></textarea>
+                    <textarea name="komen" id="komen" cols="30" rows="10" placeholder="Beri komentar"></textarea>
                     @if ($errors->has('komen'))
                         <div class="text-danger">
                             {{ $errors->first('komen') }}
