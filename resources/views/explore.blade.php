@@ -44,42 +44,12 @@
                 @endforeach
 
             </div>
-            <div class="resep">as</div>
-            <div class="resep">as</div>
-            
-            <div class="resep">as</div>
-            <div class="resep">as</div>
-            <div class="resep">as</div>
-            
-            <div class="resep">as</div>
-            <div class="resep">as</div>
-            <div class="resep">as</div>
-            
-            <div class="resep">as</div>
-            <div class="resep">as</div>
-            <div class="resep">as</div>
 
             
-            <div class="resep">as</div>
-            <div class="resep">as</div>
-            <div class="resep">as</div>
-            
-            <div class="resep">as</div>
-            <div class="resep">as</div>
-            <div class="resep">as</div>
 
-            
-            <div class="resep">as</div>
-            <div class="resep">as</div>
-            <div class="resep">as</div>
-
-            
-            <div class="resep">as</div>
-            <div class="resep">as</div>
-            <div class="resep">as</div>
         </div>
     </div>
 
-    <img src="../assets/background.png" class="background">
+    <img src={{ URL::asset('images/background.png') }} class="background">
 </body>
 </html>
