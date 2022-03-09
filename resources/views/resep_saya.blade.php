@@ -32,7 +32,7 @@
                 Resep Saya
             </div>
             <a href="(tambah resep)">
-                <div class="button">Tambah Resep</div>
+                <div class="resep-button">Tambah Resep</div>
             </a>
 
             <div class="resep-container">
