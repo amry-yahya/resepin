@@ -27,51 +27,63 @@
     </header>
 
     <div class="content">
-        <div class="resep-container">
-            
-            
-            @foreach ($resep as $r)
-                
-            <a href="/resep/view/{{ $r->id }}">
-                <div class="resep dark">
-                    <div class="img" id="gambar">
-                        <img src="{{ URL::to('/') }}/gambar/{{ $r->id }}/{{ $r->image }}" alt="">
-                    </div>
-
-                    <div class="desc">
-                        <div class="desc-col">
-                            <div class="rating">
-                                @for ($i = 0; $i < $r->rating; $i++)
-                                    <img id="star" src={{ URL::asset('images\rating\star.png') }} alt="">
-                                @endfor
-                                @for ($i = 0; $i < 5 - $r->rating; $i++)
-                                    <img id="star" src={{ URL::asset('images\rating\no-star.png') }} alt="">
-                                @endfor
-                            </div>
-                            <div class="time">
-                                <img src={{ URL::asset('images\explore\back-in-time.png') }} alt="">
-                                
-                                {{ $r->cooking_time }} menit
-                            </div>
-                        </div>
-                        <div class="desc-col">
-                            <div class="nama ">
-                                {{ $r->recipe_name }}
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
+        <div class="container" style="padding:0.1rem;">
+            <div class="header-text">
+                Resep Saya
+            </div>
+            <a href="(tambah resep)">
+                <div class="button">Tambah Resep</div>
             </a>
 
-            @endforeach
+            <div class="resep-container">
+                
+                
+                @foreach ($resep as $r)
+                    
+                <a href="/resep/view/{{ $r->id }}">
+                    <div class="resep dark">
+                        <div class="img" id="gambar">
+                            <img src="{{ URL::to('/') }}/gambar/{{ $r->id }}/{{ $r->image }}" alt="">
+                        </div>
+    
+                        <div class="desc">
+                            <div class="desc-col">
+                                <div class="rating">
+                                    @for ($i = 0; $i < $r->rating; $i++)
+                                        <img id="star" src={{ URL::asset('images\rating\star.png') }} alt="">
+                                    @endfor
+                                    @for ($i = 0; $i < 5 - $r->rating; $i++)
+                                        <img id="star" src={{ URL::asset('images\rating\no-star.png') }} alt="">
+                                    @endfor
+                                </div>
+                                <div class="time">
+                                    <img src={{ URL::asset('images\explore\back-in-time.png') }} alt="">
+                                    
+                                    {{ $r->cooking_time }} menit
+                                </div>
+                            </div>
+                            <div class="desc-col">
+                                <div class="nama ">
+                                    {{ $r->recipe_name }}
+                                </div>
+    
+                            </div>
+                        </div>
+                    </div>
+                </a>
 
-            
-         <img src={{ URL::asset('images/background.png') }} class="background">
+                
+    
+                @endforeach
+    
+                
+             <img src={{ URL::asset('images/background.png') }} class="background">
+        
+    
+            </div>
     
 
         </div>
-
     </div>
 </body>
 

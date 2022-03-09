@@ -29,7 +29,7 @@
         <div class="container">
             <div class=" text-center tittle">ABOUT US</div>
             <br><br>
-            <div class="header">
+            <div class="header-text">
                 Resepin
             </div>
             <div class="text">
@@ -41,7 +41,7 @@
                 Harapan kami semua orang bisa memasak dengan cara yang mudah dan menyenangkan.
             </div>
             <br><br>
-            <div class="header">
+            <div class="header-text">
                 Our Team
             </div>
             <div class="team">

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,11 +7,14 @@
         <script defer src={{ URL::asset('js/script.js') }}></script>
         <link rel="stylesheet" href={{ URL::asset('css/style.css') }}>
         <title>{{ $resep->recipe_name }}</title>
-    </head>
-
+    </head> 
 <body>
     <a href="/explore">Back</a>
-    <p>{{ $resep->recipe_name }}</p>
+
+    <div class="resep-tittle">
+        {{ $resep->recipe_name }}
+    </div>
+    <p></p>
     <p>{{ $resep->id_user }}</p>
     <p>{{ $resep->cooking_time }}</p>
     <p>{{ $resep->tag }}</p>
@@ -76,6 +78,7 @@
             <input type="submit" class="btn btn-success" value="Simpan">
         </div>
 
+        <img src={{ URL::asset('images/background.png') }} class="background">
     </form>
 </body>
 
