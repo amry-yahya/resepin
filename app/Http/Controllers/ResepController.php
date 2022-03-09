@@ -13,13 +13,27 @@ class ResepController extends Controller
     public function index()
     {
         $resep = Resep::all();
-        return view('resep', ['resep' => $resep]);
+        return view('landing', ['resep' => $resep]);
+    }
+
+    public function join()
+    {
+        $resep = Resep::all();
+        return view('join', ['resep' => $resep]);
+    }
+
+    public function explore()
+    {
+        $resep = Resep::all();
+        return view('explore', ['resep' => $resep]);
     }
 
     public function tambah()
     {
         return view('resep_tambah');
     }
+
+    
     public function store(Request $request)
     {
         $this->validate($request, [

@@ -16,7 +16,10 @@ use App\Http\Controllers\UploadController;
 */
 
 Route::get('/', [ResepController::class, 'index']);
-Route::get('/resep', [ResepController::class, 'index']);
+Route::get('/join', [ResepController::class, 'join']);
+Route::get('/explore', [ResepController::class, 'explore']);
+
+
 Route::get('/resep/tambah', [ResepController::class, 'tambah']);
 Route::post('/resep/store', [ResepController::class, 'store']);
 Route::get('/resep/view/{id}', [ResepController::class, 'view']);
