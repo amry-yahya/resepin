@@ -15,16 +15,26 @@ use App\Http\Controllers\UploadController;
 |
 */
 
-Route::get('/', [ResepController::class, 'index']);
-Route::get('/join', [ResepController::class, 'join']);
-Route::get('/explore', [ResepController::class, 'explore']);
-Route::get('/about', [ResepController::class, 'about']);
+Route::get('/', function () {
+    return redirect('/register');
+});
 
-Route::get('/resep/tambah', [ResepController::class, 'tambah']);
-Route::post('/resep/store', [ResepController::class, 'store']);
-Route::get('/resep/view/{id}', [ResepController::class, 'view']);
-Route::get('/resep/edit/{id}', [ResepController::class, 'edit']);
-Route::put('/resep/update/{id}', [ResepController::class, 'update']);
-Route::get('/resep/hapus/{id}', [ResepController::class, 'delete']);
-Route::get('/upload/{id}', [UploadController::class, 'upload']);
-Route::post('/upload/proses', [UploadController::class, 'proses_upload']);
+Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
+    Route::get('/', [ResepController::class, 'index']);
+    Route::get('/', [ResepController::class, 'index']);
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+    Route::get('/join', [ResepController::class, 'join']);
+    Route::get('/explore', [ResepController::class, 'explore']);
+    Route::get('/about', [ResepController::class, 'about']);
+
+    Route::get('/resep/tambah', [ResepController::class, 'tambah']);
+    Route::post('/resep/store', [ResepController::class, 'store']);
+    Route::get('/resep/view/{id}', [ResepController::class, 'view']);
+    Route::get('/resep/edit/{id}', [ResepController::class, 'edit']);
+    Route::put('/resep/update/{id}', [ResepController::class, 'update']);
+    Route::get('/resep/hapus/{id}', [ResepController::class, 'delete']);
+    Route::get('/upload/{id}', [UploadController::class, 'upload']);
+    Route::post('/upload/proses', [UploadController::class, 'proses_upload']);
+});
