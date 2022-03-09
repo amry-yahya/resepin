@@ -6,6 +6,7 @@ use App\Models\Resep;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use App\Models\Komentar;
 use Illuminate\Support\Facades\Auth;
 
 class ResepController extends Controller
@@ -124,7 +125,8 @@ class ResepController extends Controller
     public function view($id)
     {
         $resep = Resep::find($id);
-        return view('resep_view', ['resep' => $resep]);
+        $komentar = Komentar::all();
+        return view('resep_view', ['resep' => $resep, 'komentar' => $komentar]);
     }
     public function delete($id)
     {

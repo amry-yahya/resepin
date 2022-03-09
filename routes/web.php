@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ResepController;
 use App\Http\Controllers\UploadController;
+use App\Http\Controllers\KomentarController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,13 +24,14 @@ Route::get('/explore', [ResepController::class, 'explore']);
 
 Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
     Route::get('/dashboard', function () {
-        return view('dashboard');
+        return view('landing');
     })->name('dashboard');
     Route::get('/join', [ResepController::class, 'join']);
     Route::get('/about', [ResepController::class, 'about']);
     Route::get('/resep_saya', [ResepController::class, 'resep_saya']);
     Route::get('/resep/tambah', [ResepController::class, 'tambah']);
     Route::post('/resep/store', [ResepController::class, 'store']);
+    Route::post('/komentar/store', [KomentarController::class, 'store']);
     Route::get('/resep/view/{id}', [ResepController::class, 'view']);
     Route::get('/resep/edit/{id}', [ResepController::class, 'edit']);
     Route::put('/resep/update/{id}', [ResepController::class, 'update']);
