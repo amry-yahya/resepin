@@ -18,7 +18,9 @@
         </a>
         @if (is_null(Auth::id()))
             <div class="nav-bar">
-                <div class="nav-item">About</div>
+                <a href="./about">
+                    <div class="nav-item">About</div>
+                </a>
                 <div class="nav-item">
                     <div class="button"><a href="./join">Join</a></div>
                 </div>

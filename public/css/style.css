@@ -177,6 +177,7 @@ form[method="post"] input[type="submit"]:hover{
 
 .text{
     color: black;
+    font-size: 1.2rem;
 }
 .logo{
     color: #5A189A;
@@ -542,10 +543,9 @@ a{
 /* view resep */
 
 .content .container{
-    width: 80%;
-    height: 80%;
+    width: 70%;
     background:rgba(255,255,255, 0.6);
-    padding: 3rem;
+    padding: 5rem;
 
     border-radius: 1.1rem;
 }
@@ -556,7 +556,7 @@ a{
 
 /* About */
 .header{
-    font-size: 2rem;
+    font-size: 2.2rem;
     font-weight: bold;
 }
 
