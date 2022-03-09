@@ -10,23 +10,35 @@
 </head>
 <body>
     <header>
-        <a href="../"><div class="logo">Resepin</div></a>
-        <div class="nav-bar">
-            <div class="nav-item">About</div>
-            <div class="nav-item">
-                <div class="button"><a href="./join/">Join</a></div>
+        <a href="{{ URL::to('/') }}/">
+            <div class="logo">Resepin</div>
+        </a>
+        @if (is_null(Auth::id()))
+            <div class="nav-bar">
+                <a href="./about">
+                    <div class="nav-item">About</div>
+                </a>
+                <div class="nav-item">
+                    <div class="button"><a href="./join">Join</a></div>
+                </div>
             </div>
-        </div>
+        @endif
     </header>
+
     <div class="content">
         <div class="container">
-            <div class="header text-center">ABOUT US</div>
+            <div class=" text-center tittle">ABOUT US</div>
             <br><br>
             <div class="header">
                 Resepin
             </div>
             <div class="text">
-                <b>Resepin</b> adalah sebuah aplikasi berbasis web
+                <b>Resepin</b> adalah platform tempat kamu bisa berbagi resep, tutorial dan tips memasak dengan orang lain dari seluruh dunia.
+                Dengan mengangkat tema open source, kamu dapat berkontribusi bersama dengan menambahkan resep, memberi rating, membuat blog dengan ribuan orang lainnya. 
+                <br>
+                Resepin hadir dengan ribuan resep yang mudah dipahami dan dapat diterapkan dengan mudah. Mulai dari aneka nasi, bakso, mie, seafood, minuman, roti dan masih banyak lagi.
+                Konten pada setiap artikel sudah di review terlebih dahulu dan dikemas dengan menyenangkan, mudah dipahami dan mudah diterapkan.
+                Harapan kami semua orang bisa memasak dengan cara yang mudah dan menyenangkan.
             </div>
             <br><br>
             <div class="header">
@@ -60,6 +72,9 @@
         </div>
 
     </div>
+    @for($i = 0; $i < 3; $i++)
+        <br>
+    @endfor
 
     <img src={{ URL::asset('images/background.png') }} class="background">
 </body>
