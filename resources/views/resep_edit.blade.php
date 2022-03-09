@@ -58,14 +58,6 @@
             @endif
         </div>
         <div class="form-group">
-            <input type="number" name="rating" class="form-control" placeholder="rating" value="{{ $resep->rating }}">
-            @if ($errors->has('rating'))
-                <div class="text-danger">
-                    {{ $errors->first('rating') }}
-                </div>
-            @endif
-        </div>
-        <div class="form-group">
             <textarea name="ingredients" id="" cols="30" rows="10">{{ $resep->ingredients }}</textarea>
             @if ($errors->has('ingredients'))
                 <div class="text-danger">
