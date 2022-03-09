@@ -50,7 +50,7 @@ class ResepController extends Controller
  
     		// mengambil data dari table resep sesuai pencarian data
 		$resep = DB::table('reseps')
-		->where('tag','like',"%".$request."%")
+		->where('tag','like',"%".$request->tag."%")
 		->paginate();
  
     		// mengirim data resep ke view index
