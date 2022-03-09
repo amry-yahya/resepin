@@ -69,9 +69,11 @@
 
     <img src={{ URL::asset('images/background.png') }} class="background">
     
-    <div class="resep-button bg-dark">
-        <img src={{ URL::asset('images/explore/recipe-book.png') }} alt="">
-    </div>
+    <a href="()link menuju my recipe.php)">
+        <div class="resep-button bg-dark">
+            <img src={{ URL::asset('images/explore/recipe-book.png') }} alt="">
+        </div>
+    </a>
 </body>
 </html>
 
