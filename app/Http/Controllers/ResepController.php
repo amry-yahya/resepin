@@ -40,8 +40,11 @@ class ResepController extends Controller
  
     		// mengirim data resep ke view index
 		return view('explore',['resep' => $resep]);
- 
 	}
+
+    public function resep_saya(Request $request){
+        return view('resep_saya');
+    }
 
     
     public function about()
