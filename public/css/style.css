@@ -5,8 +5,11 @@
 }
 
 html{
+    
+    overflow-x: hidden;
     background: rgb(223, 210, 235,.1);
     
+    padding: 0;
     width: 100vw;
     height: 100vh;
     
@@ -15,7 +18,7 @@ html{
     background-repeat: no-repeat;
 
     font-family: 'Poppins', sans-serif;
-    font-size: 15px;
+    font-size: 14px;
     
     z-index: -10;
 }
@@ -215,7 +218,7 @@ a{
     color: #FFFF;
 }
 
-/* Landing Page */
+
 .content{
     position: relative;
 
@@ -225,8 +228,12 @@ a{
     flex-direction: column;
 
     margin: 0;
-    padding: 4rem 0 0 0;
+    padding: 2rem 0 0 0;
 }
+
+
+
+/* Landing Page */
 .bg-illust{
     width: 20rem;
     height: 20rem;
@@ -462,11 +469,12 @@ a{
     background-color: rgba(0, 0, 0, 0.1);
     border-radius: 1rem;
     width: auto;
-    height: 15rem;
+    height: auto;
 }
 
 .resep #gambar img{
     max-width: 20rem;
+    max-height: 15rem;
 }
 
 .desc{
@@ -529,4 +537,45 @@ a{
 .resep-button:hover{
     filter:brightness(90%);
     cursor: pointer;
+}
+
+/* view resep */
+
+.content .container{
+    width: 80%;
+    height: 80%;
+    background:rgba(255,255,255, 0.6);
+    padding: 3rem;
+
+    border-radius: 1.1rem;
+}
+
+.resep-tittle{
+
+}
+
+/* About */
+.header{
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.team{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+.team-item{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+
+}
+.team-item img{
+    max-height: 20rem;
+}
+
+.team-item .text{
+    font-size: 1.5rem;
 }
